@@ -1,4 +1,4 @@
-# 黑马点评 · YanHuoTanDian
+# 烟火探店 · YanHuoTanDian
 
 类大众点评的商家信息查询与互动平台 demo（前后端分离）。后端基于 **Spring Boot 2 + Redis** 实现了缓存三兄弟、Lua 秒杀、关注 Feed 流、GEO 附近商铺、BitMap 签到、HyperLogLog UV 统计等经典场景；并在老版本技术栈上**自研 AI 智能客服**（SSE 流式对话 + 关键词检索 RAG）。
 
