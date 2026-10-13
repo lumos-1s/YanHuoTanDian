@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### 敏感配置防泄露 ###
+.env
+*.local.yml
+**/secret*

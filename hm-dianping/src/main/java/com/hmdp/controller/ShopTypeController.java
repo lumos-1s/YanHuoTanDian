@@ -2,16 +2,10 @@ package com.hmdp.controller;
 
 
 import com.hmdp.dto.Result;
-import com.hmdp.entity.ShopType;
-import com.hmdp.service.IShopService;
 import com.hmdp.service.IShopTypeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * <p>
@@ -21,6 +15,7 @@ import java.util.List;
  * @author 虎哥
  * @since 2021-12-22
  */
+
 @RestController
 @RequestMapping("/shop-type")
 public class ShopTypeController {

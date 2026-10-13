@@ -8,21 +8,19 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import javax.annotation.Resource;
-
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
-/**
- * 配置拦截器的方法
- * @param registry 拦截器注册器，用于注册自定义拦截器
- */
+    /**
+     * 配置拦截器的方法
+     * @param registry 拦截器注册器，用于注册自定义拦截器
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-    // 注册登录拦截器
+        // 注册登录拦截器
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns(
@@ -33,8 +31,9 @@ public class MvcConfig implements WebMvcConfigurer {
                         "/voucher/**",
                         "/shop-type/**",
                         "/upload/**",
-                        "/blog/hot"
-
+                        "/blog/hot",
+                        "/blog/uv/**",
+                        "/chat/**"
                 ).order(1);
         registry.addInterceptor(new RefreshTokenInterceptor(stringRedisTemplate)).addPathPatterns("/**").order(0);
     }

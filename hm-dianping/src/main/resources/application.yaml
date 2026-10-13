@@ -1,5 +1,10 @@
 server:
   port: 8081
+  servlet:
+    encoding:
+          charset: UTF-8
+          enabled: true
+          force: true
 spring:
   application:
     name: hmdp
@@ -25,3 +30,9 @@ mybatis-plus:
 logging:
   level:
     com.hmdp: debug
+# ===== AI 配置（第2、3步新增）=====
+ark:
+  # API Key 从环境变量读取，不写明文（防 git 提交泄露）；IDEA 运行配置里加 ARK_API_KEY
+  api-key: ${ARK_API_KEY:}
+  chat-model: doubao-seed-2-0-lite-260428
+
